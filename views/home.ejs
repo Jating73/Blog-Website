@@ -6,28 +6,19 @@
     <section class="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="row">
-                        <% posts.forEach((post)=>{ %>
-                            <%    console.log(post.title); %>
-                            <div class="col-md-4">
-                                <h2><%= post.title %></h2>
-                                <p><%= post.content.substring(0,100) + "..." %> <a href="/posts/<%=post.title%>">Read More</a> </p>
+                <% posts.forEach((post)=>{ %>
+                    <%    console.log(post.title); %>
+                        <div class="col-md-3">
+                            <div class="card my_card">
+                                <img src="https://source.unsplash.com/random/600x314" class="img-fluid" alt="Banner">
+                                <div class="card-body">
+                                    <h3 class="card-title"><%= post.title %></h3>
+                                    <p class="card-text"><%= post.content.substring(0,100) + "..." %></p>
+                                    <a href="/posts/<%=post.title%>" class="btn btn-sm btn-primary">Read More</a>
+                                </div>
                             </div>
-                        <%}) %>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="position-fixed">
-                        <h4 class="text-uppercase">Popular Posts</h4>
-                        <ul class="list-group-flush">
-                            <% posts.forEach((post)=>{ %>
-                                <%    console.log(post.title); %>
-                                <li class="list-group-item"><a href="/posts/<%=post.title%>"><%= post.title %></a></li>
-                            <%}) %>
-                          </ul>
-                    </div>
-                </div>    
+                        </div>
+                <%}) %>
             </div>
         </div>
     </section>

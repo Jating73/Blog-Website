@@ -63,7 +63,8 @@ app.get("/posts/:postName",(req,res)=>{
     {
       res.render("post",{
         title:post.title,
-        content:post.content
+        content:post.content,
+        posts:posts
       });
     }
   });
