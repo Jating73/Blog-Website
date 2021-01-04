@@ -44,9 +44,13 @@ app.get("/compose",(req,res)=>{
 })
 
 app.post("/compose",(req,res)=>{
+  const date=new Date();
+  const datetime=date.toLocaleString();
   const post={
     title:req.body.postTitle,
-    content:req.body.postBody
+    content:req.body.postBody,
+    user:req.body.postUser,
+    datetime:datetime
   };
   
   posts.push(post);
@@ -64,6 +68,8 @@ app.get("/posts/:postName",(req,res)=>{
       res.render("post",{
         title:post.title,
         content:post.content,
+        user:post.user,
+        date:post.datetime,
         posts:posts
       });
     }

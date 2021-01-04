@@ -22,6 +22,11 @@
     z-index: 1;
 }
 
+.main .content{
+    padding: 10px 24px;
+    background: #f3f0e1;
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }
